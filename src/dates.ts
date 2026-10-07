@@ -29,3 +29,6 @@ const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
 export const longDate = (iso: string) =>
   cap(new Intl.DateTimeFormat('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(asNoonUtc(iso)));
 
+
+/** Data breve per spazi stretti: "Lun 12 ott" */
+export const shortDate = (iso: string) => cap(`${weekdayShort(iso)} ${dayNumber(iso)} ${monthShort(iso)}`);

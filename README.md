@@ -1,6 +1,6 @@
 # Web app di prenotazione (MVP)
 
-Pagina pubblica dove il cliente sceglie servizio, giorno e orario, inserisce i suoi dati e prenota.
+Pagina pubblica di **Cavadduzzu** (gommista, Santa Croce Camerina) dove il cliente sceglie servizio, giorno e orario, inserisce i suoi dati e prenota.
 Non contiene logica di business: parla solo con il workflow n8n **GOMMISTA-30-Web-API**, che a sua volta
 usa i workflow esistenti `10-Availability` (orari liberi) e `01-Create-Booking-V3` (prenotazione).
 
@@ -22,7 +22,7 @@ npm run build    # sito pronto in dist/
 
 ## Configurazione
 
-`src/config.ts` (indirizzo dello sportello n8n, giorni prenotabili, timeout).
+`src/config.ts` (indirizzo dello sportello n8n, giorni prenotabili, timeout) e `src/brand.ts` (nome, titolari, logo). Contatti, servizi e orari arrivano sempre dall'API.
 L'indirizzo si può cambiare senza toccare il codice con la variabile `VITE_API_BASE` (vedi `.env.example`).
 
 ## Pubblicazione
