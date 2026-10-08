@@ -32,3 +32,7 @@ export const longDate = (iso: string) =>
 
 /** Data breve per spazi stretti: "Lun 12 ott" */
 export const shortDate = (iso: string) => cap(`${weekdayShort(iso)} ${dayNumber(iso)} ${monthShort(iso)}`);
+
+/** Data lunga in minuscolo, da usare dentro una frase: "lunedì 12 ottobre" */
+export const lowerDate = (iso: string) =>
+  new Intl.DateTimeFormat('it-IT', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(asNoonUtc(iso));

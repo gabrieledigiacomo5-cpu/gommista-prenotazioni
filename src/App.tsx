@@ -6,8 +6,10 @@ import {
 import { brand } from './brand';
 import { downloadIcs } from './calendar';
 import { config } from './config';
-import { addDays, dayNumber, longDate, monthShort, shortDate, todayInRome, weekdayShort } from './dates';
+import { addDays, dayNumber, longDate, lowerDate, monthShort, shortDate, todayInRome, weekdayShort } from './dates';
 import { CalendarIcon, PhoneIcon, PinIcon, ServiceIcon } from './icons';
+import RollingBand from './RollingBand';
+import TyreScene from './TyreScene';
 
 type Step = 'service' | 'datetime' | 'details' | 'done';
 
@@ -68,11 +70,11 @@ export default function App() {
   return (
     <div className="app">
       <header className="hero">
+        <TyreScene />
         <div className="wrap hero-inner">
-          <img className="logo" src={brand.logo} alt="" width="88" height="88" />
           <div className="hero-text">
-            <p className="eyebrow">{brand.tagline}{place?.city ? ` a ${place.city}` : ''}</p>
             <h1>{brand.name}</h1>
+            <p className="trade">{brand.tagline}{place?.city ? ` a ${place.city}` : ''}</p>
             <p className="people">{brand.people}</p>
           </div>
           <div className="hero-actions">
@@ -139,6 +141,8 @@ export default function App() {
         </section>
       </main>
 
+      <RollingBand />
+
       <footer className="footer">
         <div className="wrap footer-inner">
           <strong>{brand.name}</strong>
@@ -174,7 +178,7 @@ function PanelHead({ step, service, date, time, onGo }: {
       {current > 0 && service && (
         <p className="choice">
           <strong>{service.name}</strong>
-          {date && time && current > 1 && <> · {longDate(date)} · ore {time}</>}
+          {date && time && current > 1 && <>, {lowerDate(date)} alle {time}</>}
         </p>
       )}
     </div>
@@ -270,7 +274,7 @@ function DateTimeStep({ service, location, date, time, onDate, onTime }: {
       {!date && <p className="hint">Tocca un giorno per vedere gli orari liberi.</p>}
       {date && (
         <>
-          <h3>Orari liberi · {longDate(date)}</h3>
+          <h3>Orari liberi per {lowerDate(date)}</h3>
           {loading && <div className="slots skeleton" aria-label="Caricamento orari">{Array.from({ length: 8 }, (_, i) => <span key={i} />)}</div>}
           {error && <p className="error">{error}</p>}
           {slots && slots.slots.length > 0 && (
@@ -405,7 +409,7 @@ function DetailsStep({ service, location, date, time, details, onChange, onSlotT
       <div className="submit-bar">
         <div className="submit-summary">
           <strong>{service.name}</strong>
-          <span>{shortDate(date)} · ore {time}</span>
+          <span>{shortDate(date)} alle {time}</span>
         </div>
         <button className="btn btn-signal btn-big" type="submit" disabled={sending}>
           {sending ? 'Prenotazione in corso…' : 'Prenota'}
@@ -429,7 +433,7 @@ function DoneStep({ result, service, mapsUrl, onAgain }: { result: BookingSucces
         </div>
         <dl className="ticket-body">
           <div><dt>Servizio</dt><dd>{b.service_name}</dd></div>
-          <div><dt>Quando</dt><dd>{longDate(b.date)}, ore {b.time}</dd></div>
+          <div><dt>Quando</dt><dd>{longDate(b.date)} alle {b.time}</dd></div>
           <div><dt>Dove</dt><dd>{b.address}</dd></div>
         </dl>
         <div className="ticket-code">

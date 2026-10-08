@@ -4,5 +4,5 @@ export const brand = {
   name: 'Cavadduzzu',
   tagline: 'Gommista',
   people: 'Vincenzo Cavallo con i figli Ignazio e Gaudenzio',
-  logo: './logo.svg',
+  logo: './ruota.svg',
 };

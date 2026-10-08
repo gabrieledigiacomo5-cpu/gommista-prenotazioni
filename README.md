@@ -37,3 +37,7 @@ Dopo la pubblicazione è consigliabile limitare il CORS del workflow 30 al domin
 
 Tutto ciò che riguarda l'attività arriva dall'API (`/catalog`). Per servire più attività basterà aggiungere
 un identificativo dell'attività in `config.ts` (es. dal sottodominio) e passarlo all'API.
+
+## Animazioni
+
+La gomma 3D (three.js, caricato dopo la pagina) e la gomma che rotola sulla fascia rispettano l'impostazione di sistema "riduci animazioni": in quel caso si vede la ruota disegnata ferma. Per provarle comunque aggiungere `?motion` all'indirizzo.
