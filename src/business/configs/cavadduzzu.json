@@ -1,0 +1,34 @@
+{
+  "slug": "cavadduzzu",
+  "name": "Cavadduzzu",
+  "trade": "Gommista",
+  "people": "Vincenzo Cavallo con i figli Ignazio e Gaudenzio",
+  "emblem": "./ruota.svg",
+  "description": "Cavadduzzu, gommista a Santa Croce Camerina: prenota online il tuo appuntamento.",
+  "apiBase": "https://n8n.alemasat.com/webhook/gommista/v1",
+  "theme": {
+    "ink": "#14213d",
+    "primary": "#1f3a93",
+    "primaryDark": "#172c70",
+    "accent": "#f2b705",
+    "accent2": "#c1272d",
+    "accent3": "#2e7d4f",
+    "mist": "#eef1f8",
+    "line": "#d9dfec",
+    "muted": "#55607a"
+  },
+  "fonts": {
+    "display": "Zilla Slab",
+    "body": "Figtree"
+  },
+  "features": {
+    "hero3d": "tyre",
+    "rollingBand": true
+  },
+  "privacy": {
+    "contact": "il numero di telefono indicato in fondo alla pagina",
+    "retention": "il tempo necessario a gestire l'appuntamento e comunque non oltre 12 mesi",
+    "confirmed": false,
+    "controller": "Cavallo Vincenzo (Cavadduzzu)"
+  }
+}

@@ -1,8 +1,9 @@
-// Identita' dell'attivita' mostrata dalla web app (dati confermati dal titolare il 2026-10-07).
-// Contatti, indirizzo, servizi e orari liberi NON stanno qui: arrivano sempre dall'API (/catalog, /availability).
+// Compatibilita': l'identita' ora arriva dalla configurazione dell'attivita' (src/business/configs/<slug>.json).
+import { business } from './business';
+
 export const brand = {
-  name: 'Cavadduzzu',
-  tagline: 'Gommista',
-  people: 'Vincenzo Cavallo con i figli Ignazio e Gaudenzio',
-  logo: './ruota.svg',
+  name: business.name,
+  tagline: business.trade,
+  people: business.people || '',
+  logo: business.emblem,
 };

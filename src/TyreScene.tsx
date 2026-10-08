@@ -4,7 +4,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { reducedMotion } from './motion';
 
-const COLORS = { red: '#C1272D', blue: '#1F3A93', green: '#2E7D4F', yellow: '#F2B705', ink: '#14213D' };
+import { business } from './business';
+
+// Colori del cerchio dipinto: quelli della configurazione dell'attivita'
+const COLORS = { red: business.theme.accent2, blue: business.theme.primary, green: business.theme.accent3, yellow: business.theme.accent, ink: business.theme.ink };
 const HORSE = 'M70 32 L68 21 L62 33 C56 38 50 45 45 52 C41 57 37 61 35 65 C33 69 35 73 39 74 C43 75 47 73 50 70 C53 67 56 65 59 66 C61 74 60 84 58 92 L84 92 C86 76 84 58 77 43 C75 38 73 35 70 32 Z';
 const MANE = 'M73 29 C82 33 89 44 90 58 C91 70 89 82 87 92 L82 92 C85 80 85 66 82 54 C79 45 77 39 72 35 Z';
 

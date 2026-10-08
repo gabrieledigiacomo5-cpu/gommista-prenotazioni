@@ -1,0 +1,34 @@
+{
+  "slug": "esempio-barbiere",
+  "name": "Barberia Esempio",
+  "trade": "Barbiere",
+  "people": "",
+  "emblem": "./favicon.svg",
+  "description": "Barberia Esempio: prenota online il tuo appuntamento.",
+  "apiBase": "https://n8n.alemasat.com/webhook/esempio-barbiere/v1",
+  "theme": {
+    "ink": "#1d1b19",
+    "primary": "#7a2e1f",
+    "primaryDark": "#5e2216",
+    "accent": "#e0a83a",
+    "accent2": "#2f5d62",
+    "accent3": "#a4b494",
+    "mist": "#f1eeea",
+    "line": "#ddd6cd",
+    "muted": "#665e57"
+  },
+  "fonts": {
+    "display": "Zilla Slab",
+    "body": "Figtree"
+  },
+  "features": {
+    "hero3d": "none",
+    "rollingBand": false
+  },
+  "privacy": {
+    "contact": "il numero di telefono indicato in fondo alla pagina",
+    "retention": "il tempo necessario a gestire l'appuntamento e comunque non oltre 12 mesi",
+    "confirmed": false,
+    "controller": "Barberia Esempio (dati di prova)"
+  }
+}

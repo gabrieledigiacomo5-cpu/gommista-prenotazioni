@@ -211,3 +211,13 @@ input.invalid { border-color: var(--error); background: #fff6f5; }
   .skeleton span { animation: none; }
   .btn { transition: none; }
 }
+
+/* ---------- Informativa privacy ---------- */
+.privacy { max-width: 560px; width: calc(100% - 32px); border: none; border-radius: 20px; padding: 22px 20px; color: var(--ink); box-shadow: 0 20px 60px rgba(20,33,61,0.3); }
+.privacy::backdrop { background: rgba(20,33,61,0.5); }
+.privacy h2 { font-size: 1.6rem; margin-bottom: 10px; }
+.privacy p { margin: 0 0 10px; font-size: 0.95rem; }
+.privacy .btn { margin-top: 6px; }
+.privacy-draft { background: #fff7dc; border-left: 4px solid var(--yellow); padding: 8px 10px; border-radius: 8px; }
+.field-help a, .footer a { color: var(--blue); }
+.emblem-only { opacity: 1; }

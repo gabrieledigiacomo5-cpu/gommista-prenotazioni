@@ -20,7 +20,7 @@ const esc = (s: string) => s.replace(/[\\,;]/g, m => `\\${m}`).replace(/\n/g, '\
 
 export function downloadIcs(opts: { code: string; title: string; date: string; time: string; minutes: number; location: string; description: string }) {
   const ics = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Cavadduzzu//Prenotazioni//IT', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Prenotazioni online//IT', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
     'BEGIN:VEVENT',
     `UID:${opts.code}@prenotazioni`,
     `DTSTAMP:${romeToUtcStamp(new Date().toISOString().slice(0, 10), '00:00')}`,

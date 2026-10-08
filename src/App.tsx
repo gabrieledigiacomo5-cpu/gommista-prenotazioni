@@ -4,6 +4,8 @@ import {
   type BookingSuccess, type Catalog, type Location, type Service, type SlotsResponse,
 } from './api';
 import { brand } from './brand';
+import { business } from './business';
+import PrivacyNotice from './PrivacyNotice';
 import { downloadIcs } from './calendar';
 import { config } from './config';
 import { addDays, dayNumber, longDate, lowerDate, monthShort, shortDate, todayInRome, weekdayShort } from './dates';
@@ -70,7 +72,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="hero">
-        <TyreScene />
+        {business.features.hero3d === 'tyre' ? <TyreScene /> : <img className="tyre-fallback emblem-only" src={brand.logo} alt="" aria-hidden="true" />}
         <div className="wrap hero-inner">
           <div className="hero-text">
             <h1>{brand.name}</h1>
@@ -141,13 +143,14 @@ export default function App() {
         </section>
       </main>
 
-      <RollingBand />
+      {business.features.rollingBand && <RollingBand />}
 
       <footer className="footer">
         <div className="wrap footer-inner">
           <strong>{brand.name}</strong>
           {place && <span>{place.address}</span>}
           {place?.phone && <a href={telHref(place.phone)}>Tel. {place.phone}</a>}
+          <PrivacyNotice />
         </div>
       </footer>
     </div>
@@ -387,7 +390,7 @@ function DetailsStep({ service, location, date, time, details, onChange, onSlotT
       </div>
       <label>Telefono
         <input className={invalid('phone')} type="tel" inputMode="tel" value={details.phone} onChange={set('phone')} autoComplete="tel" placeholder="es. 333 123 4567" maxLength={20} />
-        <span className="field-help">Ti contattiamo solo per questo appuntamento.</span>
+        <span className="field-help">Ti contattiamo solo per questo appuntamento. <a href="#privacy">Informativa privacy</a></span>
       </label>
       {service.requires_tyre_size && (
         <label>Misura degli pneumatici
